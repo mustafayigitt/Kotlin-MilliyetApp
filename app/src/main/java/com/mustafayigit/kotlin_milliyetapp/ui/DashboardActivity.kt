@@ -21,7 +21,7 @@ class DashboardActivity : AppCompatActivity() {
         viewPagerNewsCategory.adapter =
             CategoryNewsAdapter(
                 supportFragmentManager,
-                MockData.getNewsCategoryFragment(10)
+                MockData.getNewsCategoryFragment()
             )
 
         tabNewsCategory.setupWithViewPager(viewPagerNewsCategory)
