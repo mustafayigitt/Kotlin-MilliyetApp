@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_alert"
+        android:icon="@drawable/ic_alert"
+        android:title="Hatırlat"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_feedback"
+        android:icon="@drawable/ic_feedback"
+        android:title="Geri Bildirim Ver" />
+
+</menu>
