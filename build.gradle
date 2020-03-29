@@ -11,6 +11,9 @@ buildscript {
         espresso_espresso_core_version = '3.2.0'
 
         material_material_version = '1.1.0'
+
+        glide_glide_version = '4.11.0'
+        glide_compiler_version = '4.11.0'
     }
     repositories {
         google()

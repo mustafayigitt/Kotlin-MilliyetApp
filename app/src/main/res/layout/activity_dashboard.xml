@@ -20,8 +20,8 @@
             android:theme="?attr/actionBarTheme">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/main_logo" />
 
@@ -38,7 +38,7 @@
             android:id="@+id/tabNewsCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable"
+            app:tabMode="auto"
             app:tabSelectedTextColor="@color/colorAccent"
             app:tabTextColor="@color/colorUnSelected" />
 
@@ -48,4 +48,6 @@
         android:id="@+id/viewPagerNewsCategory"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>
