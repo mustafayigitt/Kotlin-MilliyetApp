@@ -18,15 +18,32 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/txtNewsTitle"
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:maxLines="2"
-                android:padding="16dp"
-                tools:text="Dünyayı Bekleyen Büyük Tehlike" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNewsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:maxLines="2"
+                    android:padding="16dp"
+                    tools:text="Dünyayı Bekleyen Büyük Tehlike" />
+
+                <Switch
+                    android:id="@+id/swIsSaved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:padding="16dp"
+                    android:text="Kaydet  " />
+
+            </LinearLayout>
+
 
             <ImageView
                 android:id="@+id/imgNews"

@@ -32,6 +32,15 @@ class BigNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
             .into(itemView.imgNews)
 
         itemView.txtNewsTitle.text = newsModel.newsTitle
+
+        itemView.swIsSaved.setOnCheckedChangeListener(null)
+        itemView.swIsSaved.isChecked = newsModel.isSaved
+        itemView.swIsSaved.setOnCheckedChangeListener { buttonView, isChecked ->
+            newsModel.isSaved = isChecked
+
+        }
+
+
         itemView.setOnClickListener {
             onItemClickListener(newsModel)
         }

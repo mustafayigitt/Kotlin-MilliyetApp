@@ -8,5 +8,6 @@ package com.mustafayigit.kotlin_milliyetapp.model
 data class NewsModel(
     val newsImageUrl: String,
     val newsTitle: String,
-    override val itemViewType: Int
+    override val itemViewType: Int,
+    var isSaved: Boolean
 ) : BaseNewsModel()

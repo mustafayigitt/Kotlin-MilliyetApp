@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.mustafayigit.kotlin_milliyetapp.R
 import com.mustafayigit.kotlin_milliyetapp.model.BaseNewsModel
 import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
-import kotlinx.android.synthetic.main.adapter_item_big_news.view.*
+import kotlinx.android.synthetic.main.adapter_item_small_news.view.*
 
 /**
  * Created By MUSTAFA
@@ -33,6 +33,12 @@ class SmallNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
             .into(itemView.imgNews)
 
         itemView.txtNewsTitle.text = newsModel.newsTitle
+        itemView.swIsSaved.setOnCheckedChangeListener(null)
+        itemView.swIsSaved.isChecked = newsModel.isSaved
+        itemView.swIsSaved.setOnCheckedChangeListener { buttonView, isChecked ->
+            newsModel.isSaved = isChecked
+        }
+
         itemView.setOnClickListener {
             onItemClickListener(newsModel)
         }
