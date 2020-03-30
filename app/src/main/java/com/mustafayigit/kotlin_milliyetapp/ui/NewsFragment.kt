@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.mustafayigit.kotlin_milliyetapp.R
 import com.mustafayigit.kotlin_milliyetapp.adapter.NewsAdapter
 import com.mustafayigit.kotlin_milliyetapp.mock.MockData
+import com.mustafayigit.kotlin_milliyetapp.util.extToast
 import kotlinx.android.synthetic.main.fragment_news.*
 
 class NewsFragment : Fragment(R.layout.fragment_news) {
@@ -16,6 +17,11 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
         recyclerNewsList.adapter = NewsAdapter(MockData.getNewsList(10)) { baseNewsModel ->
 
+        }
+
+        swipeLayout.setOnRefreshListener {
+            "Refresh" extToast (requireContext())
+            swipeLayout.isRefreshing = false
         }
 
     }
