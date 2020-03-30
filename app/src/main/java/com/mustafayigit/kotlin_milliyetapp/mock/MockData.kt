@@ -1,7 +1,8 @@
 package com.mustafayigit.kotlin_milliyetapp.mock
 
-import com.mustafayigit.kotlin_milliyetapp.model.BigNewsModel
+import com.mustafayigit.kotlin_milliyetapp.enums.NewsType
 import com.mustafayigit.kotlin_milliyetapp.model.FragmentModel
+import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
 import com.mustafayigit.kotlin_milliyetapp.ui.NewsFragment
 
 /**
@@ -38,44 +39,60 @@ object MockData {
 
     }
 
-    fun getBigNewsList(newsListSize: Int): List<BigNewsModel> {
-        val bigNewsList = ArrayList<BigNewsModel>()
+    fun getBigNewsList(newsListSize: Int): List<NewsModel> {
+        val newsList = ArrayList<NewsModel>()
 
 
-        val news = BigNewsModel(
+        val news = NewsModel(
             "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fdbf055427f0634fe8dbc.jpg",
-            "İstanbul'a yakın! Kar yağışı başladı"
-
+            "İstanbul'a yakın! Kar yağışı başladı",
+            NewsType.BIG_NEWS.id
         )
-        val news2 = BigNewsModel(
+        val news2 = NewsModel(
             "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fd0a555427f0634fe8d93.jpg",
-            "Son dakika | Resmi Gazete'de yayımlandı! Belediyelere corona virüs desteği"
+            "Son dakika | Resmi Gazete'de yayımlandı! Belediyelere corona virüs desteği",
+            NewsType.BIG_NEWS.id
         )
 
-        val news3 = BigNewsModel(
+        val news3 = NewsModel(
             "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fbe8555427f0634fe8d3c.jpg",
-            "Son dakika... Türkiye'nin corona virüsle mücadelesi! Son 24 saatte neler yaşandı?"
+            "Son dakika... Türkiye'nin corona virüsle mücadelesi! Son 24 saatte neler yaşandı?",
+            NewsType.SMALL_NEWS.id
         )
 
-        val news4 = BigNewsModel(
+        val news4 = NewsModel(
             "https://i2.milimaj.com/i/milliyet/75/0x410/5e7f768f5542831df08876b0.jpg",
-            "Cumhurbaşkanı Erdoğan, karantina sürecinde doğum yapan Sevda Gül'ü tebrik etti"
+            "Cumhurbaşkanı Erdoğan, karantina sürecinde doğum yapan Sevda Gül'ü tebrik etti",
+            NewsType.SMALL_NEWS.id
 
         )
+        val news5 = NewsModel(
+            "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fbe8555427f0634fe8d3c.jpg",
+            "Son dakika... Türkiye'nin corona virüsle mücadelesi! Son 24 saatte neler yaşandı?",
+            NewsType.SMALL_NEWS.id
+        )
+        val news6 = NewsModel(
+            "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fbe8555427f0634fe8d3c.jpg",
+            "Son dakika... Türkiye'nin corona virüsle mücadelesi! Son 24 saatte neler yaşandı?",
+            NewsType.SMALL_NEWS.id
+        )
 
-        val news5 = BigNewsModel(
+        val news7 = NewsModel(
             "https://i2.milimaj.com/i/milliyet/75/0x410/5e7fa7f8554280179829f2e4.jpg",
-            "Juventus'ta futbolculardan 90 milyon euroluk fedakarlık!"
+            "Juventus'ta futbolculardan 90 milyon euroluk fedakarlık!",
+            NewsType.BIG_NEWS.id
         )
         repeat(newsListSize) {
-            bigNewsList.add(news)
-            bigNewsList.add(news2)
-            bigNewsList.add(news3)
-            bigNewsList.add(news4)
-            bigNewsList.add(news5)
+            newsList.add(news)
+            newsList.add(news3)
+            newsList.add(news4)
+            newsList.add(news5)
+            newsList.add(news6)
+            newsList.add(news2)
+            newsList.add(news7)
         }
 
 
-        return bigNewsList
+        return newsList
     }
 }

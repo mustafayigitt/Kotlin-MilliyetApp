@@ -13,9 +13,9 @@ import kotlinx.android.synthetic.main.adapter_item_big_news.view.*
  * on 29/03/2020
  */
 
-class BigNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
+class SmallNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(container.context).inflate(
-        R.layout.adapter_item_big_news,
+        R.layout.adapter_item_small_news,
         container,
         false
     )

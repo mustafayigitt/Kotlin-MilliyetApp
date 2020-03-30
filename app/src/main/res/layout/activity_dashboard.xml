@@ -21,9 +21,8 @@
             android:theme="?attr/actionBarTheme">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/main_logo" />
 
             <TextView
@@ -31,8 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Milliyet"
                 android:textColor="@color/colorAccent"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout

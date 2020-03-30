@@ -5,7 +5,8 @@ package com.mustafayigit.kotlin_milliyetapp.model
  * on 29/03/2020
  */
 
-data class BigNewsModel(
+data class NewsModel(
     val newsImageUrl: String,
-    val newsTitle: String
+    val newsTitle: String,
+    val itemViewType: Int
 )
