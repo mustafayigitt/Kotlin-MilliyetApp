@@ -1,6 +1,9 @@
 package com.mustafayigit.kotlin_milliyetapp.mock
 
+import com.google.android.gms.ads.AdSize
 import com.mustafayigit.kotlin_milliyetapp.enums.NewsType
+import com.mustafayigit.kotlin_milliyetapp.model.AdsModel
+import com.mustafayigit.kotlin_milliyetapp.model.BaseNewsModel
 import com.mustafayigit.kotlin_milliyetapp.model.FragmentModel
 import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
 import com.mustafayigit.kotlin_milliyetapp.ui.NewsFragment
@@ -39,8 +42,8 @@ object MockData {
 
     }
 
-    fun getBigNewsList(newsListSize: Int): List<NewsModel> {
-        val newsList = ArrayList<NewsModel>()
+    fun getNewsList(newsListSize: Int): List<BaseNewsModel> {
+        val newsList = ArrayList<BaseNewsModel>()
 
 
         val news = NewsModel(
@@ -82,7 +85,16 @@ object MockData {
             "Juventus'ta futbolculardan 90 milyon euroluk fedakarlık!",
             NewsType.BIG_NEWS.id
         )
+
+        val adsModel = AdsModel(
+            AdSize.BANNER,
+            "ca-app-pub-3940256099942544/6300978111",
+            NewsType.ADS_BANNER.id
+        )
+
         repeat(newsListSize) {
+
+            newsList.add(adsModel)
             newsList.add(news)
             newsList.add(news3)
             newsList.add(news4)

@@ -14,7 +14,7 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        recyclerNewsList.adapter = NewsAdapter(MockData.getBigNewsList(10)) { bigNewsModel ->
+        recyclerNewsList.adapter = NewsAdapter(MockData.getNewsList(10)) { baseNewsModel ->
 
         }
 

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mustafayigit.kotlin_milliyetapp.R
+import com.mustafayigit.kotlin_milliyetapp.model.BaseNewsModel
 import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
 import kotlinx.android.synthetic.main.adapter_item_big_news.view.*
 
@@ -21,16 +22,16 @@ class BigNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     )
 ) {
     fun bind(
-        newsModel: NewsModel,
-        onItemClickListener: (NewsModel) -> Unit
+        newsModel: BaseNewsModel,
+        onItemClickListener: (BaseNewsModel) -> Unit
     ) {
-        itemView.txtNewsTitle.text = newsModel.newsTitle
         Glide.with(itemView.context)
-            .load(newsModel.newsImageUrl)
+            .load((newsModel as NewsModel).newsImageUrl)
             .centerInside()
             .placeholder(R.drawable.main_logo)
             .into(itemView.imgNews)
 
+        itemView.txtNewsTitle.text = newsModel.newsTitle
         itemView.setOnClickListener {
             onItemClickListener(newsModel)
         }

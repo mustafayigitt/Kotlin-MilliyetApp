@@ -3,7 +3,7 @@ package com.mustafayigit.kotlin_milliyetapp.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mustafayigit.kotlin_milliyetapp.enums.NewsType
-import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
+import com.mustafayigit.kotlin_milliyetapp.model.BaseNewsModel
 
 /**
  * Created By MUSTAFA
@@ -11,8 +11,8 @@ import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
  */
 
 class NewsAdapter(
-    private val newsList: List<NewsModel>,
-    private val onItemClickListener: (NewsModel) -> Unit
+    private val newsList: List<BaseNewsModel>,
+    private val onItemClickListener: (BaseNewsModel) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
@@ -22,6 +22,10 @@ class NewsAdapter(
             NewsType.BIG_NEWS.id -> {
                 BigNewsViewHolder(parent)
             }
+            NewsType.ADS_BANNER.id -> {
+                AdsBannerViewHolder(parent)
+            }
+
             else -> {
                 BigNewsViewHolder(parent)
             }
@@ -39,6 +43,9 @@ class NewsAdapter(
             }
             NewsType.BIG_NEWS.id -> {
                 (holder as BigNewsViewHolder).bind(newsModel, onItemClickListener)
+            }
+            NewsType.ADS_BANNER.id -> {
+                (holder as AdsBannerViewHolder).bind(newsModel, onItemClickListener)
             }
             else -> {
                 (holder as BigNewsViewHolder).bind(newsModel, onItemClickListener)
