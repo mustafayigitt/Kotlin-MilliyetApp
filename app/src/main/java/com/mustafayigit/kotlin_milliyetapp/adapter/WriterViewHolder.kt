@@ -29,6 +29,7 @@ class WriterViewHolder(private val container: ViewGroup) : RecyclerView.ViewHold
             .load(writer.writerProfileImage)
             .circleCrop()
             .placeholder(R.drawable.ic_launcher_foreground)
+            .error(R.drawable.ic_launcher_foreground)
             .into(itemView.imgWriterPicture)
 
 

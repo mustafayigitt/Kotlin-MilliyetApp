@@ -126,18 +126,24 @@ object MockData {
         return newsList
     }
 
-    fun getNewsByCategory(categoryName: String): List<NewsModel> {
+    fun getNewsByCategory(categoryName: String): List<BaseNewsModel> {
 
         val allNews = getNewsList()
 
-        val categoryNewsList = ArrayList<NewsModel>()
+        val categoryNewsList = ArrayList<BaseNewsModel>()
         allNews.forEach {
             if (it.itemViewType != NewsType.ADS_BANNER.id) {
                 if ((it as NewsModel).newsCategory == categoryName)
                     categoryNewsList.add(it)
             }
         }
+        val adsModel = AdsModel(
+            AdSize.BANNER,
+            "ca-app-pub-3940256099942544/6300978111",
+            NewsType.ADS_BANNER.id
+        )
 
+        categoryNewsList.add(adsModel)
         return categoryNewsList
 
 
