@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import com.mustafayigit.kotlin_milliyetapp.R
 import com.mustafayigit.kotlin_milliyetapp.model.BaseNewsModel
 import com.mustafayigit.kotlin_milliyetapp.model.NewsModel
+import com.mustafayigit.kotlin_milliyetapp.util.extSaveNewsToSharedPref
+import com.mustafayigit.kotlin_milliyetapp.util.extToast
 import kotlinx.android.synthetic.main.adapter_item_small_news.view.*
 
 /**
@@ -37,11 +39,14 @@ class SmallNewsViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
         itemView.swIsSaved.isChecked = newsModel.isSaved
         itemView.swIsSaved.setOnCheckedChangeListener { buttonView, isChecked ->
             newsModel.isSaved = isChecked
+            if (isChecked) {
+                itemView.context extSaveNewsToSharedPref newsModel.newsTitle
+                ("""${newsModel.newsTitle} Başlıklı Haber Kaydedildi""") extToast itemView.context
+            }
         }
 
         itemView.setOnClickListener {
             onItemClickListener(newsModel)
         }
     }
-
 }
