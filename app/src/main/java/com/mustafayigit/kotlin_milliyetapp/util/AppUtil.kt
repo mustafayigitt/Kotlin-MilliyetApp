@@ -34,6 +34,3 @@ infix fun Context.extSaveNewsToSharedPref(title: String) {
             .apply()
     }
 }
-
-// TODO: Implement Show Saved News in New View
-// TODO: Add Detail View for News and open when click
