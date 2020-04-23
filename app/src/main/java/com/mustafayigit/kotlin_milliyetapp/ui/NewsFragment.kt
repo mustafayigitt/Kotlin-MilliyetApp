@@ -25,12 +25,14 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
             "ANASAYFA" -> {
                 recyclerNewsList.adapter = NewsAdapter(MockData.getNewsList()) {
                     (it as NewsModel).newsCategory extToast (requireContext())
+                    showDetail(it)
                 }
             }
 
             else -> {
                 recyclerNewsList.adapter = NewsAdapter(MockData.getNewsByCategory(title)) {
                     (it as NewsModel).newsCategory extToast (requireContext())
+                    showDetail(it)
                 }
             }
         }
@@ -43,5 +45,13 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
     }
 
+    private fun showDetail(news: NewsModel) {
+        val detailFragment = DetailFragment()
+        val bundle = Bundle()
+        bundle.putParcelable("keyNews", news)
+        detailFragment.arguments = bundle
+        detailFragment.show(fragmentManager!!, "NewsDetail")
+
+    }
 
 }
