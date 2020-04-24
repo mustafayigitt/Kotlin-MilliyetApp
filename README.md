@@ -9,14 +9,10 @@ A simple level replica news app that I prepared while learning Kotlin.
 https://www.twitch.tv/codemy/
 
 **Screenshots**
+
 ![main page](/main_page.png)
 ![detail page](/detail_page.png)
 ![writer page](/writer.png)
-![splash screen](/test.gif)
-
-
-
-<br>
 
 :exclamation:Out-of-date news data has been used in the application. Not connected to any remote server:exclamation:
 
